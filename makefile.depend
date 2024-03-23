@@ -1,0 +1,27 @@
+crt0.rel            :   crt0.s \
+                        main.inc
+main.rel            :   main.s main.inc \
+                        bios.inc System.inc
+System.rel          :   System.s System.inc \
+                        main.inc bios.inc vdp.inc
+Math.rel            :   Math.s Math.inc
+App.rel             :   App.s App.inc \
+                        bios.inc vdp.inc System.inc Game.inc
+Sound.rel           :   Sound.s Sound.inc \
+                        bios.inc vdp.inc System.inc App.inc
+Game.rel            :   Game.s Game.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Back.inc Player.inc Rival.inc Cat.inc Shot.inc Dust.inc
+Back.rel            :   Back.s Back.inc \
+                        bios.inc vdp.inc System.inc App.inc Game.inc
+Player.rel          :   Player.s Player.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Shot.inc
+Rival.rel           :   Rival.s Rival.inc \
+                        bios.inc vdp.inc System.inc App.inc Game.inc
+Cat.rel             :   Cat.s Cat.inc \
+                        bios.inc vdp.inc System.inc App.inc Game.inc Back.inc Player.inc
+Shot.rel            :   Shot.s Shot.inc \
+                        bios.inc vdp.inc System.inc App.inc Game.inc Back.inc
+Dust.rel            :   Dust.s Dust.inc \
+                        bios.inc vdp.inc System.inc App.inc Game.inc
+
+pattern.rel         :   pattern.s
